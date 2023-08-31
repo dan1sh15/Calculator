@@ -7,6 +7,7 @@ let container = document.querySelector('.container');
 let arr = Array.from(buttons);
 let display = document.querySelector('.display');
 let body = document.body;
+let modeIcon = document.getElementById('modeIcon');
 
 arr.forEach(button => {
     button.addEventListener('click', (e) => {
@@ -45,7 +46,8 @@ btn.addEventListener('click', ()=>{
             color: black;
         }`;
         document.head.appendChild(style);
-        
+        modeIcon.classList.remove('fa-sun');
+        modeIcon.classList.add('fa-moon');
         btn.value = "Dark Mode";
     }
     else{
@@ -62,7 +64,8 @@ btn.addEventListener('click', ()=>{
             color: white;
         }`;
         document.head.appendChild(style);
-        
+        modeIcon.classList.remove('fa-moon');
+        modeIcon.classList.add('fa-sun');
         btn.value = "Light Mode";
     }
 })
